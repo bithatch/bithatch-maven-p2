@@ -57,7 +57,7 @@
 								<!-- If they’re Tycho-built OSGi bundles on Central, no wrapping 
 									is done (unless override=true) -->
 								<artifact>
-									<id>uk.co.bithatch:zyxy-lib:0.0.2</id>            <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-lib:0.0.3</id>            <!-- TODO -->
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
@@ -65,7 +65,7 @@
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-graphics:0.0.2</id>       <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-graphics:0.0.3</id>       <!-- TODO -->
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
@@ -73,7 +73,7 @@
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-compress:0.0.2</id>       <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-compress:0.0.3</id>       <!-- TODO -->
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
@@ -81,7 +81,7 @@
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-mmc:0.0.2</id>            <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-mmc:0.0.3</id>            <!-- TODO -->
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
@@ -89,7 +89,7 @@
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-dezog:0.0.2</id>          <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-dezog:0.0.3</id>          <!-- TODO -->
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
@@ -121,6 +121,8 @@
 								<artifact>
 									<id>uk.co.bithatch:fat32-lib:0.6.6</id>
 									<instructions>
+									   <Bundle-Symbolic-Name>uk.co.bithatch.fat32</Bundle-Symbolic-Name>
+                                        <Export-Package>*;resolution:=optional</Export-Package>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
 									</instructions>
