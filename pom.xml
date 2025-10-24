@@ -19,6 +19,9 @@
   </distributionManagement>
   
   <properties>
+  
+    <zyxy.version>0.0.4-SNAPSHOT</zyxy.version>
+    <zyxy.bundle.version>0.0.4</zyxy.bundle.version>
     <build.upload.hostname>bithatch.co.uk</build.upload.hostname>
     <build.upload.path>/httpdocs/repositories/p2_new</build.upload.path>
     <build.upload.username>bithatch</build.upload.username>
@@ -76,53 +79,58 @@
 							<artifacts>
 
 								<artifact>
-									<id>uk.co.bithatch:zyxy-lib:0.0.3</id>
+									<id>uk.co.bithatch:zyxy-lib:${zyxy.version}</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
-										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>ZYXY Library</Bundle-Name>
+										<Bundle-Version>${zyxy.bundle.version}</Bundle-Version>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-graphics:0.0.3</id>
+									<id>uk.co.bithatch:zyxy-graphics:${zyxy.version}</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
-										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>ZYXY Graphics</Bundle-Name>
+                                        <Bundle-Version>${zyxy.bundle.version}</Bundle-Version>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-compress:0.0.3</id>
+									<id>uk.co.bithatch:zyxy-compress:${zyxy.version}</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
-										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>ZYXY Compress</Bundle-Name>
+                                        <Bundle-Version>${zyxy.bundle.version}</Bundle-Version>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-mmc:0.0.3</id>
+									<id>uk.co.bithatch:zyxy-mmc:${zyxy.version}</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
-										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>ZYXY MMC</Bundle-Name>
+                                        <Bundle-Version>${zyxy.bundle.version}</Bundle-Version>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-dezog:0.0.3</id>
+									<id>uk.co.bithatch:zyxy-dezog:${zyxy.version}</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
-										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>ZYXY Dezog</Bundle-Name>
+                                        <Bundle-Version>${zyxy.bundle.version}</Bundle-Version>
 									</instructions>
 								</artifact>
 
