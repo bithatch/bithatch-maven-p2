@@ -22,10 +22,11 @@
   
     <zyxy.version>0.0.4-SNAPSHOT</zyxy.version>
     <zyxy.bundle.version>0.0.4</zyxy.bundle.version>
-    <build.upload.hostname>bithatch.co.uk</build.upload.hostname>
-    <build.upload.path>/httpdocs/repositories/p2_new</build.upload.path>
-    <build.upload.username>bithatch</build.upload.username>
-    <build.upload.password>__YOUR_PASSWORD__</build.upload.password>
+    
+    <build.uploadHostname>bithatch.co.uk</build.uploadHostname>
+    <build.uploadPath>/httpdocs/repositories/p2_new</build.uploadPath>
+    <build.uploadUsername>bithatch</build.uploadUsername>
+    <build.uploadPassword>__YOUR_PASSWORD__</build.uploadPassword>
                                      
   </properties>
 
@@ -197,24 +198,24 @@
                         <configuration>
                             <target>
                                 <ftp action="del"
-                                     server="${build.upload.hostname}"
-                                     remotedir="${build.upload.path}"
-                                     userid="${build.upload.username}"
-                                     password="${build.upload.password}">
+                                     server="${build.uploadHostname}"
+                                     remotedir="${build.uploadPath}"
+                                     userid="${build.uploadUsername}"
+                                     password="${build.uploadPassword}">
                                     <fileset>
                                         <include name="**/"/>
                                     </fileset>
                                 </ftp>
                                 <ftp action="mkdir"
-                                     server="${build.upload.hostname}"
-                                     remotedir="${build.upload.path}"
-                                     userid="${build.upload.username}"
-                                     password="${build.upload.password}">
+                                     server="${build.uploadHostname}"
+                                     remotedir="${build.uploadPath}"
+                                     userid="${build.uploadUsername}"
+                                     password="${build.uploadPassword}">
                                 </ftp>
-                                <ftp server="${build.upload.hostname}"
-                                     remotedir="${build.upload.path}"
-                                     userid="${build.upload.username}"
-                                     password="${build.upload.password}"
+                                <ftp server="${build.uploadHostname}"
+                                     remotedir="${build.uploadPath}"
+                                     userid="${build.uploadUsername}"
+                                     password="${build.uploadPassword}"
                                      depends="yes">
                                     <fileset dir="target/repository"/>
                                 </ftp>
