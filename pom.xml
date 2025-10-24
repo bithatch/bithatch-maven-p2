@@ -135,7 +135,7 @@
 								</artifact>
 
 								<artifact>
-									<id>uk.co.bithatch:fat32-lib:0.6.6</id>
+									<id>uk.co.bithatch:fat32-lib:0.6.6-bithatch</id>
 									<instructions>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>FAT32 Support</Bundle-Name>
