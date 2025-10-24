@@ -9,6 +9,22 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	<name>Generate p2 repository from Maven Central</name>
+	
+    <distributionManagement>
+        <repository>
+            <id>bithatch-website</id>
+            <url>ftp://bithatch.co.uk/httpdocs/repositories/p2_new</url>
+            <layout>p2</layout>
+        </repository>
+  </distributionManagement>
+  
+  <properties>
+    <build.upload.hostname>bithatch.co.uk</build.upload.hostname>
+    <build.upload.path>/httpdocs/repositories/p2_new</build.upload.path>
+    <build.upload.username>bithatch</build.upload.username>
+    <build.upload.password>__YOUR_PASSWORD__</build.upload.password>
+                                     
+  </properties>
 
 	<!-- Where to fetch artifacts from; Central is default, but we pin it explicitly. -->
 	<repositories>
@@ -25,9 +41,25 @@
 		</repository>
 	</repositories>
 
-	<build>
+	<build>    
+    	<extensions>
+          <!-- Enabling the use of FTP -->
+          <extension>
+            <groupId>org.apache.maven.wagon</groupId>
+             <artifactId>wagon-ftp</artifactId>
+             <version>2.8</version>
+          </extension>
+        </extensions>
 		<plugins>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.4</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
 			<plugin>
 				<groupId>org.reficio</groupId>
 				<artifactId>p2-maven-plugin</artifactId>
@@ -139,25 +171,53 @@
 				</executions>
 			</plugin>
 
-
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-p2-repository-plugin</artifactId>
-				<version>5.0.0</version>
-				<executions>
-					<execution>
-						<id>zip-p2</id>
-						<phase>package</phase>
-						<goals>
-							<goal>archive-repository</goal>
-						</goals>
-						<configuration>
-							<repositoryLocation>${project.build.directory}/repository</repositoryLocation>
-							<finalName>bithatch-maven-p2-${project.version}</finalName>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant-commons-net</artifactId>
+                        <version>1.10.15</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>copy-p2-repo</id>
+                        <phase>deploy</phase>
+                        <configuration>
+                            <target>
+                                <ftp action="del"
+                                     server="${build.upload.hostname}"
+                                     remotedir="${build.upload.path}"
+                                     userid="${build.upload.username}"
+                                     password="${build.upload.password}">
+                                    <fileset>
+                                        <include name="**/"/>
+                                    </fileset>
+                                </ftp>
+                                <ftp action="mkdir"
+                                     server="${build.upload.hostname}"
+                                     remotedir="${build.upload.path}"
+                                     userid="${build.upload.username}"
+                                     password="${build.upload.password}">
+                                </ftp>
+                                <ftp server="${build.upload.hostname}"
+                                     remotedir="${build.upload.path}"
+                                     userid="${build.upload.username}"
+                                     password="${build.upload.password}"
+                                     depends="yes">
+                                    <fileset dir="target/repository"/>
+                                </ftp>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
 		</plugins>
 	</build>
