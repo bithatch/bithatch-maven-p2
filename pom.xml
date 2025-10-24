@@ -29,19 +29,17 @@
                                      
   </properties>
 
-	<!-- Where to fetch artifacts from; Central is default, but we pin it explicitly. -->
 	<repositories>
+		
 		<repository>
-			<id>central</id>
-			<name>Maven Central</name>
-			<url>https://repo1.maven.org/maven2/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+            <id>central-snapshots</id>
+            <url>https://central.sonatype.com/repository/maven-snapshots</url>
+            <snapshots/>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    
 	</repositories>
 
 	<build>    
@@ -229,5 +227,7 @@
             </plugin>
 
 		</plugins>
+		
 	</build>
+	
 </project>
