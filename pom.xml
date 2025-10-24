@@ -137,7 +137,7 @@
 								<artifact>
 									<id>uk.co.bithatch:fat32-lib:0.6.6-bithatch</id>
 									<instructions>
-                                        <Bundle-Version>0.6.6</Bundle-Vendor>
+                                        <Bundle-Version>0.6.6</Bundle-Version>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>FAT32 Support</Bundle-Name>
 										<Bundle-Symbolic-Name>uk.co.bithatch.fat32</Bundle-Symbolic-Name>
