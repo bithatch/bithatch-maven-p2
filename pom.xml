@@ -24,7 +24,7 @@
     <zyxy.bundle.version>0.0.4</zyxy.bundle.version>
     
     <build.uploadHostname>bithatch.co.uk</build.uploadHostname>
-    <build.uploadPath>/httpdocs/repositories/p2_new</build.uploadPath>
+    <build.uploadPath>/httpdocs/repositories/p2</build.uploadPath>
     <build.uploadUsername>bithatch</build.uploadUsername>
     <build.uploadPassword>__YOUR_PASSWORD__</build.uploadPassword>
                                      
@@ -201,7 +201,9 @@
                                      server="${build.uploadHostname}"
                                      remotedir="${build.uploadPath}"
                                      userid="${build.uploadUsername}"
-                                     password="${build.uploadPassword}">
+                                     password="${build.uploadPassword}"
+                                     ignoreNoncriticalErrors="true"
+                                     skipFailedTransfers="true">
                                     <fileset>
                                         <include name="**/"/>
                                     </fileset>
@@ -210,12 +212,16 @@
                                      server="${build.uploadHostname}"
                                      remotedir="${build.uploadPath}"
                                      userid="${build.uploadUsername}"
-                                     password="${build.uploadPassword}">
+                                     password="${build.uploadPassword}"
+                                     ignoreNoncriticalErrors="true"
+                                     skipFailedTransfers="true">
                                 </ftp>
                                 <ftp server="${build.uploadHostname}"
                                      remotedir="${build.uploadPath}"
                                      userid="${build.uploadUsername}"
                                      password="${build.uploadPassword}"
+                                     binary="yes"
+                                     passive="yes"
                                      depends="yes">
                                     <fileset dir="target/repository"/>
                                 </ftp>
