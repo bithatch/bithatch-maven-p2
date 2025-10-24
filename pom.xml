@@ -28,8 +28,6 @@
 	<build>
 		<plugins>
 
-			<!-- 1) Generate p2 repo from Maven artifacts (wrap non-OSGi jars automatically). -->
-			<!-- Docs + examples: Reficio p2-maven-plugin. -->
 			<plugin>
 				<groupId>org.reficio</groupId>
 				<artifactId>p2-maven-plugin</artifactId>
@@ -43,86 +41,74 @@
 						</goals>
 						<configuration>
 
-							<!-- Output directory of the p2 repository -->
-							<!--<destinationDirectory>../bithatch.github.io/repositories/p2</destinationDirectory> -->
-
-							<!-- Optional: generate a simple category.xml -->
-							<!--<publishArtifacts>true</publishArtifacts> <p2.compress>true</p2.compress> -->
-
-							<!-- The artifacts to include; transitive=true by default for each 
-								entry -->
 							<artifacts>
 
-								<!-- === Your Zyxy bundles from Central (already OSGi) === -->
-								<!-- If they’re Tycho-built OSGi bundles on Central, no wrapping 
-									is done (unless override=true) -->
 								<artifact>
-									<id>uk.co.bithatch:zyxy-lib:0.0.3</id>            <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-lib:0.0.3</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Bundle-Vendor>Bithatch</Bundle-Vendor>
+										<Bundle-Name>ZYXY Library</Bundle-Name>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-graphics:0.0.3</id>       <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-graphics:0.0.3</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Bundle-Vendor>Bithatch</Bundle-Vendor>
+										<Bundle-Name>ZYXY Graphics</Bundle-Name>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-compress:0.0.3</id>       <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-compress:0.0.3</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Bundle-Vendor>Bithatch</Bundle-Vendor>
+										<Bundle-Name>ZYXY Compress</Bundle-Name>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-mmc:0.0.3</id>            <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-mmc:0.0.3</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Bundle-Vendor>Bithatch</Bundle-Vendor>
+										<Bundle-Name>ZYXY MMC</Bundle-Name>
 									</instructions>
 								</artifact>
 								<artifact>
-									<id>uk.co.bithatch:zyxy-dezog:0.0.3</id>          <!-- TODO -->
+									<id>uk.co.bithatch:zyxy-dezog:0.0.3</id>
 									<override>true</override>
 									<instructions>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
+										<Bundle-Vendor>Bithatch</Bundle-Vendor>
+										<Bundle-Name>ZYXY Dezog</Bundle-Name>
 									</instructions>
 								</artifact>
 
-								<!-- === SLF4J 2.x (non-OSGi on Central) — wrap + export packages 
-									=== -->
 								<artifact>
 									<id>org.slf4j:slf4j-api:2.0.17</id>
-									<!-- BND instructions applied only if the jar isn't already OSGi -->
-									<!--<instructions> Export the packages your bundles import <Export-Package> 
-										org.slf4j*;version="2.0.17" </Export-Package> Keep imports permissive; API 
-										has no hard imports anyway <Import-Package>*;resolution:=optional</Import-Package> 
-										Reproducible/cleaner manifest <_reproducible>true</_reproducible> <_removeheaders>Bnd-LastModified</_removeheaders> 
-										</instructions> <override>true</override> -->
 								</artifact>
 
-								<!-- A simple provider; also wrapped into an OSGi bundle -->
 								<artifact>
 									<id>org.slf4j:slf4j-simple:2.0.17</id>
-									<!--<instructions> <Import-Package>*;resolution:=optional</Import-Package> 
-										<_reproducible>true</_reproducible> <_removeheaders>Bnd-LastModified</_removeheaders> 
-										</instructions> <override>true</override> -->
 								</artifact>
 
-								<!-- Example of your own non-OSGi dep, if any: -->
 								<artifact>
 									<id>uk.co.bithatch:fat32-lib:0.6.6</id>
 									<instructions>
-									   <Bundle-Symbolic-Name>uk.co.bithatch.fat32</Bundle-Symbolic-Name>
-                                        <Export-Package>*;resolution:=optional</Export-Package>
+										<Bundle-Vendor>Bithatch</Bundle-Vendor>
+										<Bundle-Name>FAT32 Support</Bundle-Name>
+										<Bundle-Symbolic-Name>uk.co.bithatch.fat32</Bundle-Symbolic-Name>
+										<Export-Package>*;resolution:=optional</Export-Package>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
 									</instructions>
@@ -143,65 +129,35 @@
 											z80core;version="1.0.2"
 										</Export-Package>
 										<Import-Package>org.slf4j, *;resolution:=optional</Import-Package>
+										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
 									</instructions>
 								</artifact>
 
 							</artifacts>
-
-							<!-- Mirror/resolve transitives for each listed artifact -->
-							<!--<includeTransitive>true</includeTransitive> -->
-
-							<!-- Optional: attach sources to the p2 site -->
-							<!--<attachSources>false</attachSources> -->
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+
 
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>3.1.0</version>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>5.0.0</version>
 				<executions>
 					<execution>
-						<id>copy-p2-repo</id>
+						<id>zip-p2</id>
 						<phase>package</phase>
-						<configuration>
-							<target>
-								<echo
-									message="Copying p2 repository to ../bithatch.github.io/repositories/p2" />
-								<delete failonerror="false">
-									<fileset dir="../bithatch.github.io/repositories/p2"
-										includes="**/*" />
-								</delete>
-								<copy todir="../bithatch.github.io/repositories/p2"
-									overwrite="true">
-									<fileset dir="${project.build.directory}/repository" />
-								</copy>
-							</target>
-						</configuration>
 						<goals>
-							<goal>run</goal>
+							<goal>archive-repository</goal>
 						</goals>
+						<configuration>
+							<repositoryLocation>${project.build.directory}/repository</repositoryLocation>
+							<finalName>bithatch-maven-p2-${project.version}</finalName>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-
-
-			<!-- 2) Zip the generated p2 site so you can publish it easily -->
-			<!-- <plugin> <groupId>org.eclipse.tycho</groupId> <artifactId>tycho-p2-repository-plugin</artifactId> 
-				<version>5.0.0</version> <executions> <execution> <id>zip-p2</id> <phase>package</phase> 
-				<goals> <goal>archive-repository</goal> </goals> <configuration> <repositoryLocation>${project.build.directory}/repository</repositoryLocation> 
-				<finalName>bithatch-maven-p2-${project.version}</finalName> </configuration> 
-				</execution> </executions> </plugin> -->
-
-			<!-- 3) Optionally attach the zip as a build artifact -->
-			<!--<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
-				<version>3.6.0</version> <executions> <execution> <id>attach-p2-zip</id> 
-				<phase>verify</phase> <goals><goal>attach-artifact</goal></goals> <configuration> 
-				<artifacts> <artifact> <file>${project.build.directory}/bithatch-maven-p2-${project.version}.zip</file> 
-				<type>zip</type> <classifier>p2-site</classifier> </artifact> </artifacts> 
-				</configuration> </execution> </executions> </plugin> -->
 
 		</plugins>
 	</build>
