@@ -160,7 +160,7 @@
                                         <Bundle-Version>1.0.2</Bundle-Version>
                                         <Bundle-Vendor>Bithatch</Bundle-Vendor>
                                         <Bundle-Name>JSpeccy</Bundle-Name>
-                                        <Bundle-Symbolic-Name>uk.co.bithatch.jspeccy.engine</Bundle-Symbolic-Name>
+                                        <Bundle-SymbolicName>uk.co.bithatch.jspeccy.engine</Bundle-SymbolicName>
 										<Export-Package>
 											gui;version="1.0.2",
 											joystickinput;version="1.0.2",
