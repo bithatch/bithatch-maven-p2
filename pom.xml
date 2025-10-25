@@ -211,7 +211,7 @@
                                      passive="yes"
                                      skipFailedTransfers="true">
                                     <fileset>
-                                        <include name="**/"/>
+                                        <include name="**/*"/>
                                     </fileset>
                                 </ftp>
                                 <ftp action="mkdir"
