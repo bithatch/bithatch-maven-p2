@@ -74,7 +74,8 @@
 							<goal>site</goal>
 						</goals>
 						<configuration>
-
+                            <name>X</name>
+                            <nameX>X</nameX>
 							<artifacts>
 
 								<artifact>
@@ -161,7 +162,7 @@
                                         <Bundle-Version>1.0.2</Bundle-Version>
                                         <Bundle-Vendor>Bithatch</Bundle-Vendor>
                                         <Bundle-Name>JSpeccy</Bundle-Name>
-                                        <Bundle-Symbolic-Name>uk.co.bithatch.jspeccy</Bundle-Symbolic-Name>
+                                        <Bundle-Symbolic-Name>uk.co.bithatch.jspeccy.engine</Bundle-Symbolic-Name>
 										<Export-Package>
 											gui;version="1.0.2",
 											joystickinput;version="1.0.2",
