@@ -178,6 +178,14 @@
 									</instructions>
 								</artifact>
 
+                                <artifact>
+                                    <id>org.glassfish.jaxb:jaxb-runtime:4.0.6</id>
+                                </artifact>
+
+                                <artifact>
+                                    <id>org.glassfish.jaxb:jaxb-core:4.0.6</id>
+                                </artifact>
+                                
 							</artifacts>
 						</configuration>
 					</execution>
