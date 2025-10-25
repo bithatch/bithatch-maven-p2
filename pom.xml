@@ -74,8 +74,6 @@
 							<goal>site</goal>
 						</goals>
 						<configuration>
-                            <name>X</name>
-                            <nameX>X</nameX>
 							<artifacts>
 
 								<artifact>
@@ -149,7 +147,7 @@
                                         <Bundle-Version>0.6.6</Bundle-Version>
 										<Bundle-Vendor>Bithatch</Bundle-Vendor>
 										<Bundle-Name>FAT32 Support</Bundle-Name>
-										<Bundle-Symbolic-Name>uk.co.bithatch.fat32</Bundle-Symbolic-Name>
+										<Bundle-SymbolicName>uk.co.bithatch.fat32</Bundle-SymbolicName>
 										<Export-Package>*;resolution:=optional</Export-Package>
 										<Import-Package>*;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
