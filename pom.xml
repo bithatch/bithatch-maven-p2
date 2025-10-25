@@ -162,6 +162,7 @@
                                         <Bundle-Name>JSpeccy</Bundle-Name>
                                         <Bundle-SymbolicName>uk.co.bithatch.jspeccy.engine</Bundle-SymbolicName>
 										<Export-Package>
+                                            configuration;version="1.0.2",
 											gui;version="1.0.2",
 											joystickinput;version="1.0.2",
 											jspeccy;version="1.0.2",
