@@ -155,23 +155,22 @@
 								</artifact>
 
 								<artifact>
-									<id>uk.co.bithatch:jspeccy:1.0.2-bithatch</id>
+									<id>uk.co.bithatch:jspeccy:1.0.2-bithatch2-SNAPSHOT</id>
 									<instructions>
-                                        <Bundle-Version>1.0.2</Bundle-Version>
                                         <Bundle-Vendor>Bithatch</Bundle-Vendor>
                                         <Bundle-Name>JSpeccy</Bundle-Name>
                                         <Bundle-SymbolicName>uk.co.bithatch.jspeccy.engine</Bundle-SymbolicName>
 										<Export-Package>
-                                            configuration;version="1.0.2",
-											gui;version="1.0.2",
-											joystickinput;version="1.0.2",
-											jspeccy;version="1.0.2",
-											machine;version="1.0.2",
-											snapshots;version="1.0.2",
-											tv.porst.jhexview;version="1.0.2",
-											tv.porst.splib.*;version="1.0.2",
-											utilities;version="1.0.2",
-											z80core;version="1.0.2"
+                                            configuration,
+											gui,
+											joystickinput,
+											jspeccy,
+											machine,
+											snapshots,
+											tv.porst.jhexview,
+											tv.porst.splib.*,
+											utilities,
+											z80core
 										</Export-Package>
 										<Import-Package>org.slf4j, *;resolution:=optional</Import-Package>
 										<Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=17))"</Require-Capability>
