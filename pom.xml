@@ -184,6 +184,26 @@
                                 <artifact>
                                     <id>org.glassfish.jaxb:jaxb-core:4.0.6</id>
                                 </artifact>
+
+                                <artifact>
+                                    <id>uk.co.bithatch:tnfs-java-client:0.9.0-SNAPSHOT</id>
+                                </artifact>
+
+                                <artifact>
+                                    <id>uk.co.bithatch:tnfs-java-server:0.9.0-SNAPSHOT</id>
+                                </artifact>
+
+                                <artifact>
+                                    <id>uk.co.bithatch:tnfs-java-client-extensions:0.9.0-SNAPSHOT</id>
+                                </artifact>
+
+                                <artifact>
+                                    <id>uk.co.bithatch:tnfs-java-nio:0.9.0-SNAPSHOT</id>
+                                </artifact>
+
+                                <artifact>
+                                    <id>uk.co.bithatch:tnfs-java-server-extensions:0.9.0-SNAPSHOT</id>
+                                </artifact>
                                 
 							</artifacts>
 						</configuration>
