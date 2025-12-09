@@ -187,22 +187,74 @@
 
                                 <artifact>
                                     <id>uk.co.bithatch:tnfs-java-client:0.9.0-SNAPSHOT</id>
+                                    <override>true</override>
+                                    <instructions>
+                                        <Import-Package>*;resolution:=optional</Import-Package>
+                                        <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
+                                        <Bundle-Vendor>Bithatch</Bundle-Vendor>
+                                        <Bundle-Name>TNFS Client</Bundle-Name>
+                                        <Bundle-Version>${tnfs.bundle.version}</Bundle-Version>
+                                    </instructions>
                                 </artifact>
 
                                 <artifact>
                                     <id>uk.co.bithatch:tnfs-java-server:0.9.0-SNAPSHOT</id>
+                                    <override>true</override>
+                                    <instructions>
+                                        <Import-Package>*;resolution:=optional</Import-Package>
+                                        <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
+                                        <Bundle-Vendor>Bithatch</Bundle-Vendor>
+                                        <Bundle-Name>TNFS Server</Bundle-Name>
+                                        <Bundle-Version>${tnfs.bundle.version}</Bundle-Version>
+                                    </instructions>
                                 </artifact>
 
                                 <artifact>
                                     <id>uk.co.bithatch:tnfs-java-client-extensions:0.9.0-SNAPSHOT</id>
+                                    <override>true</override>
+                                    <instructions>
+                                        <Import-Package>*;resolution:=optional</Import-Package>
+                                        <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
+                                        <Bundle-Vendor>Bithatch</Bundle-Vendor>
+                                        <Bundle-Name>TNFS Client Extensions</Bundle-Name>
+                                        <Bundle-Version>${tnfs.bundle.version}</Bundle-Version>
+                                    </instructions>
                                 </artifact>
 
                                 <artifact>
                                     <id>uk.co.bithatch:tnfs-java-nio:0.9.0-SNAPSHOT</id>
+                                    <override>true</override>
+                                    <instructions>
+                                        <Import-Package>*;resolution:=optional</Import-Package>
+                                        <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
+                                        <Bundle-Vendor>Bithatch</Bundle-Vendor>
+                                        <Bundle-Name>TNFS NIO File System</Bundle-Name>
+                                        <Bundle-Version>${tnfs.bundle.version}</Bundle-Version>
+                                    </instructions>
+                                </artifact>
+
+                                <artifact>
+                                    <id>uk.co.bithatch:tnfs-java-lib-extensions:0.9.0-SNAPSHOT</id>
+                                    <override>true</override>
+                                    <instructions>
+                                        <Import-Package>*;resolution:=optional</Import-Package>
+                                        <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
+                                        <Bundle-Vendor>Bithatch</Bundle-Vendor>
+                                        <Bundle-Name>TNFS Extensions Library</Bundle-Name>
+                                        <Bundle-Version>${tnfs.bundle.version}</Bundle-Version>
+                                    </instructions>
                                 </artifact>
 
                                 <artifact>
                                     <id>uk.co.bithatch:tnfs-java-server-extensions:0.9.0-SNAPSHOT</id>
+                                    <override>true</override>
+                                    <instructions>
+                                        <Import-Package>*;resolution:=optional</Import-Package>
+                                        <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
+                                        <Bundle-Vendor>Bithatch</Bundle-Vendor>
+                                        <Bundle-Name>TNFS Server Extensions</Bundle-Name>
+                                        <Bundle-Version>${tnfs.bundle.version}</Bundle-Version>
+                                    </instructions>
                                 </artifact>
                                 
 							</artifacts>
