@@ -186,6 +186,18 @@
                                 </artifact>
 
                                 <artifact>
+                                    <id>uk.co.bithatch:tnfs-java-lib:0.9.0-SNAPSHOT</id>
+                                    <override>true</override>
+                                    <instructions>
+                                        <Import-Package>*;resolution:=optional</Import-Package>
+                                        <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=21))"</Require-Capability>
+                                        <Bundle-Vendor>Bithatch</Bundle-Vendor>
+                                        <Bundle-Name>TNFS Common Library</Bundle-Name>
+                                        <Bundle-Version>${tnfs.bundle.version}</Bundle-Version>
+                                    </instructions>
+                                </artifact>
+
+                                <artifact>
                                     <id>uk.co.bithatch:tnfs-java-client:0.9.0-SNAPSHOT</id>
                                     <override>true</override>
                                     <instructions>
